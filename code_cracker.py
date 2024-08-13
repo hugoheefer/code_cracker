@@ -8,7 +8,7 @@ def decode(message_to_decode: str, decryption_key: str = "") -> str:
         for character in message_to_decode:
             for element in decryption_key:
                 if character == element:
-                    index = element.index(character)
+                    index = message_to_decode.index(character)
                     decoded_message += alphabet[index]
         
         return decoded_message
