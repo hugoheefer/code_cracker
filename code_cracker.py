@@ -1,11 +1,15 @@
-def decode(message_to_decode: str) -> str:
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    decryption_key = '!)"(£*%&><@abcdefghijklmno'
-    if message_to_decode == "":
+def decode_or_encode(message_to_process: str, type: str ="decode") -> str:
+    if type == "decode":
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        decryption_key = '!)"(£*%&><@abcdefghijklmno'
+    elif type == "encode":
+        decryption_key = "abcdefghijklmnopqrstuvwxyz"
+        alphabet = '!)"(£*%&><@abcdefghijklmno'
+    if message_to_process == "":
         return ""
     else:
         decoded_message = ""
-        for character in message_to_decode:
+        for character in message_to_process:
             if character == " ":
                     decoded_message += " "
             for element in decryption_key:
@@ -14,20 +18,3 @@ def decode(message_to_decode: str) -> str:
                     decoded_message += alphabet[index]
 
         return decoded_message
-    
-def encode(message_to_encode):
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    encryption_key = '!)"(£*%&><@abcdefghijklmno'
-    if message_to_encode == "":
-        return ""
-    else:
-        encoded_message = ""
-        for character in message_to_encode:
-            if character == " ":
-                    encoded_message += " "
-            for element in alphabet:
-                if character == element:
-                    index = alphabet.index(character)
-                    encoded_message += encryption_key[index]
-
-        return encoded_message
