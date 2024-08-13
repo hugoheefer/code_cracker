@@ -1,6 +1,6 @@
 def decode(message_to_decode: str, decryption_key: str = "") -> str:
-    alphabet = "ab"
-    decryption_key = '!)'
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    decryption_key = '!)"(£*%&><@abcdefghijklmno'
     if message_to_decode == "":
         return ""
     else:
@@ -8,7 +8,7 @@ def decode(message_to_decode: str, decryption_key: str = "") -> str:
         for character in message_to_decode:
             for element in decryption_key:
                 if character == element:
-                    index = message_to_decode.index(character)
+                    index = decryption_key.index(character)
                     decoded_message += alphabet[index]
         
         return decoded_message

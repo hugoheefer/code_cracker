@@ -26,3 +26,12 @@ def test_a_message_with_two_characters_is_decoded_correctly():
 
     #then
     assert decode(a_message) == "ab"      
+
+def test_a_message_with_three_characters_is_decoded_correctly():
+    #given
+    a_message = 'mno'
+
+    #when
+
+    #then
+    assert decode(a_message) == "xyz"     
