@@ -1,10 +1,9 @@
+conversion_data: dict = {'input':["abcdefghijklmnopqrstuvwxyz ", '!)"(£*%&><@abcdefghijklmno '], 
+                         'output':['!)"(£*%&><@abcdefghijklmno ', "abcdefghijklmnopqrstuvwxyz "]}
+ 
 def decode_or_encode(message_to_process: str, type: str ="decode") -> str:
-    if type == "decode":
-        characters_for_input = "abcdefghijklmnopqrstuvwxyz "
-        characters_for_output = '!)"(£*%&><@abcdefghijklmno '
-    elif type == "encode":
-        characters_for_input = '!)"(£*%&><@abcdefghijklmno '
-        characters_for_output = "abcdefghijklmnopqrstuvwxyz "
+    characters_for_input = get_conversion_strings(type)[0]
+    characters_for_output = get_conversion_strings(type)[1]
         
     if message_to_process == "":
         return ""
@@ -17,3 +16,9 @@ def decode_or_encode(message_to_process: str, type: str ="decode") -> str:
                     processed_message += characters_for_input[index]
 
         return processed_message
+    
+def get_conversion_strings(type: str) -> list[str]:
+    if type == "decode":
+        return conversion_data["input"]
+    elif type == "encode":
+        return conversion_data["output"]
