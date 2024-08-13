@@ -1,20 +1,21 @@
 def decode_or_encode(message_to_process: str, type: str ="decode") -> str:
     if type == "decode":
-        alphabet = "abcdefghijklmnopqrstuvwxyz"
-        decryption_key = '!)"(£*%&><@abcdefghijklmno'
+        characters_for_input = "abcdefghijklmnopqrstuvwxyz"
+        characters_for_output = '!)"(£*%&><@abcdefghijklmno'
     elif type == "encode":
-        decryption_key = "abcdefghijklmnopqrstuvwxyz"
-        alphabet = '!)"(£*%&><@abcdefghijklmno'
+        characters_for_input = '!)"(£*%&><@abcdefghijklmno'
+        characters_for_output = "abcdefghijklmnopqrstuvwxyz"
+        
     if message_to_process == "":
         return ""
     else:
-        decoded_message = ""
+        processed_message = ""
         for character in message_to_process:
             if character == " ":
-                    decoded_message += " "
-            for element in decryption_key:
+                    processed_message += " "
+            for element in characters_for_output:
                 if character == element:
-                    index = decryption_key.index(character)
-                    decoded_message += alphabet[index]
+                    index = characters_for_output.index(character)
+                    processed_message += characters_for_input[index]
 
-        return decoded_message
+        return processed_message
