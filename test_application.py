@@ -1,4 +1,4 @@
-from code_cracker import decode
+from code_cracker import decode, encode
 
 def test_decoding_an_empty_message_results_in_an_empty_decoded_message():
     #given
@@ -53,3 +53,25 @@ def test_a_message_with_three_words_is_decoded_correctly():
 
     #then
     assert decode(a_message) == "hugo heefer"
+
+def test_an_empty_message_results_in_an_empty_encoded_message():
+    #given
+    a_message = ''
+
+    #then
+    assert encode(a_message) == ""
+
+def test_a_message_with_one_character_results_in_a_correct_encoded_message():
+    #given
+    a_message = 'a'
+
+    #then
+    assert encode(a_message) == "!"
+
+
+def test_a_message_with_two_characters_results_in_a_correct_encoded_message():
+    #given
+    a_message = 'hugo heefer'
+
+    #then
+    assert encode(a_message) == "&j%d &££*£g"
