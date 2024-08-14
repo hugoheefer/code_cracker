@@ -1,6 +1,6 @@
 def decode(message: str) -> str:
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    decryption_key = '!)"(£*%&><@abcdefghijklmno'
+    alphabet = "abcdefghijklmnopqrstuvwxyz "
+    decryption_key = '!)"(£*%&><@abcdefghijklmno '
 
     if message == "":
         return ""

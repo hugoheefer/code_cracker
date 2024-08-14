@@ -27,3 +27,10 @@ def test_a_message_with_three_characters_in_reverse_order_is_decoded_correctly()
 
     #then
     assert decode(message) == "zyx" 
+
+def test_a_message_with_a_space_is_decoded_correctly():
+    #given
+    message = '! )'
+
+    #then
+    assert decode(message) == "a b" 
