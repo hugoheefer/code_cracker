@@ -26,4 +26,4 @@ def test_a_message_with_three_characters_in_reverse_order_is_decoded_correctly()
     message = 'onm'
 
     #then
-    assert decode(message) == "zyx"
+    assert decode(message) == "zyx" 
